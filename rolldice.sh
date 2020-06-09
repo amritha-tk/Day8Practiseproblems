@@ -21,7 +21,7 @@ for (( i=0; i<${#Dict[@]}; i++ ))
      then
       ((count=count+1))
           a[$x]=${Dict[$i]}
-          
+
           b[$x]=$count
 
 fi
@@ -29,15 +29,14 @@ done
 done
 
 echo  "Duplicate  elements are " ${a[@]} "and their count is" ${b[@]}
-
-max=0
-min=0
 i=0
+max=0
+min=${b[$i]}
 for y in ${b[@]}; do
     if (( $y > $max ))
     then
-     max=$y 
-     #echo  "max value " ${a[$i]}
+     max=$y
+     #echo  "max value " ${a[$y]}
      max_value=${a[$i]}
     if (( $y < $min ))
     then
