@@ -1,9 +1,10 @@
+
 #!/bin/bash -x
 
 #To generate numbers from 1 to 6
 declare -A Dict
-declare -A Dict
-
+declare -A a
+declare -A b
 for(( i=0; i<$1; i++ ))
  do
   Dict[$i]=$(( RANDOM%6+1 ))
@@ -33,18 +34,19 @@ echo  "Duplicate  elements are " ${a[@]} "and their count is" ${b[@]}
 i=0
 max=0
 min=${#Dict[@]}
-
+echo ${b[@]};
+echo ${a[@]}
 for y in ${b[@]}; do
     echo "i" $i
     if (( $y>=$max ))
     then
      max=$y
-     max_value=${a[$i]}
+     max_value=${a[0]}
 fi
     if (( $y<=$min ))
     then
     min=$y
-    min_value=${a[$i]}
+    min_value=${a[1]}
 fi
     ((i=i+1))
 done
